@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+}
+#main {
+    position: absolute;
+    width: 94vw;
+    border: 2px gold solid;
+    border-radius: 15px;
+    left: 3%;
+    top: 29%;
+    height: 70vh;
+}
