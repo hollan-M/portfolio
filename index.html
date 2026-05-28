@@ -1,19 +1,60 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="i-e edge">
-    <title>_PORTFOLIO_</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PORTFOLIO</title>
     <link rel="stylesheet" href="style.css">
-    <script src="source.js" defer=""></script>
-    <link rel="icon" type="image/x-icon" href="https://qiinr.nekoweb.org/othermedia/favicon.ico">
-    <!-- <link rel="icon" href="sigma.png"> -->
+    <!-- sources -->
+    <script src="music.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.core.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/bowser@2.12.1/es5.min.js "></script>
+    <script src="source.js" defer></script>
+    <!--  -->
+    <link rel="icon" href="ICON.png">
 </head>
+<!-- drift -->
+<div class="driftcontainer" id="driftcontainer"></div>
+<!-- end drift -->
+<!-- confirmation -->
+<div id="confirm" hidden>
+    <div id="disclaimer">
+        <p>Disclaimer! This website plays music by default; would you like to have it <b>muted</b>? This option will not be saved upon re-entering the site.</p>
+    </div>
+    <div id="disclaimer_line"></div>
+    <div id="confirm_box">
+        <svg id="CHECKMARK" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+        <div id="confirm_line"></div>
+        <svg id="XMARK" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg>
+    </div>
+</div>
+<!--  -->
 <body>
     <div id="header">
-
+        <div id="landing">
+            <!-- <p>Landing/Intro (this is the initial view/page of your site)</p> -->
+             <p>LANDING</p>
+        </div>
+        <div id="statement">
+            <!-- <p>Personal Statement/Resume (this does not need to be formatted as a resume)</p> -->
+             <p>STATEMENT</p>
+        </div>
+        <div id="galleries">
+            <!-- <p>Galleries of visual work</p> -->
+            <p>GALLERIES</p>
+        </div>
+        <div id="links">
+            <!-- <p>Links to email, social media, linkedin, etc.</p> -->
+            <p>LINKS</p>
+        </div>
+        <div id="extra">
+            <!-- Any additional relevant information you want to share -->
+            <p>EXTRA</p>
+        </div>
     </div>
+    <img id="headerSvg" src="header.svg"></img>
+    <p id="welcomeText">WELCOME TO MY PORTFOLIO!</p>
     <div id="main">
-
+        
     </div>
 </body>
