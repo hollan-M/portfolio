@@ -1,12 +1,221 @@
 body {
     background-color: black;
+    overflow: hidden;
 }
-#main {
+
+/* disclaimer box */
+
+#confirm {
     position: absolute;
-    width: 94vw;
-    border: 2px gold solid;
-    border-radius: 15px;
-    left: 3%;
-    top: 29%;
-    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    border: 1px #ffe665 solid;
+    height: 45%;
+    background-color: #0000007a;
+    backdrop-filter: blur(3px);
+}
+
+#disclaimer {
+    text-align: center;
+    color: #ecdd8d;
+    user-select: none;
+    font-size: 25px;
+}
+
+#disclaimer_line {
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    position: absolute;
+    border: 1px solid #ffe665;
+}
+
+#confirm_box {
+    border: 2px solid gold;
+    width: 92%;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    height: 43%;
+}
+
+#CHECKMARK {
+    transform: scale(5);
+    border: 1px #f9e789 solid;
+    fill: #ffe665;
+    right: 75%;
+    position: absolute;
+    top: 44%;
+    background-color: #080800;
+
+    transition: background-color 1s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+#CHECKMARK:hover {
+    background-color: #aaa069;
+    cursor: pointer;
+}
+
+#confirm_line {
+    height: 86%;
+    border: 1px solid gold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#XMARK {
+    transform: scale(5);
+    border: 1px #f9e789 solid;
+    fill: #ffe665;
+    right: 20%;
+    position: absolute;
+    top: 45%;
+    background-color: #080800;
+
+    transition: background-color 1s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+#XMARK:hover {
+    background-color: #aaa069;
+    cursor: pointer;
+}
+
+/* header */
+
+#header {
+    position: absolute;
+    border: 1px solid beige;
+    display: flex;
+    color: beige;
+    flex-direction: row;
+    justify-content: space-evenly;
+    column-gap: 15%;
+    left: 3vw;
+    top: 13vh;
+    width: 48vw;
+    overflow-x: scroll;
+    scrollbar-color: beige transparent;
+    padding: 15px;
+}
+
+#headerSvg {
+    transform: scale(0.5);
+    position: absolute;
+    top: 5%;
+}
+
+#welcomeText {
+    position: absolute;
+    top: 20.5%;
+    left: 77vw;
+    color: beige;
+    font-size: 2.8vw;
+    transform: translate(-50%, -150%);
+    overflow: hidden;
+    white-space: nowrap;
+    border: 1px solid beige;
+}
+
+#header>div:hover {
+    border: 1px solid rgb(245, 245, 149);
+    cursor: pointer;
+}
+
+#header>div {
+    user-select: none;
+}
+
+#landing {
+    border: 1px solid beige;
+    padding: 5px;
+
+    transition: border-color 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+    /* transform: translate(50%, 18%); */
+    /* height: 49px; */
+}
+#statement {
+    border: 1px solid beige;
+    padding: 5px;
+
+    transition: border-color 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+#galleries {
+    border: 1px solid beige;
+    padding: 5px;
+
+    transition: border-color 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+#links {
+    border: 1px solid beige;
+    padding: 5px;
+
+    transition: border-color 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+#extra {
+    border: 1px solid beige;
+    padding: 5px;
+
+    transition: border-color 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* main body */
+
+#main {
+    border: 1px solid #ffe665;
+    bottom: 16px;
+    position: absolute;
+    width: 98vw;
+    height: 74vh;
+}
+
+/* keyframes */
+@keyframes confirmationEnd {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    100% {
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* do drift.. */
+
+.driftcontainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.drifter {
+    position: absolute;
+    --start-x: 0;
+    --start-y: 0;
+    --end-x: 0;
+    --end-y: 0;
+    animation: drift 5s linear 1;
+    color: rgb(255, 191, 73);
+    font-size: 0;
+    user-select: none;
+}
+
+@keyframes drift {
+  0% {left: var(--start-x); top: var(--start-y); opacity: 0}
+  80% {opacity: 1}
+  100% {left: var(--end-x); top: var(--end-y); opacity: 0}
 }
