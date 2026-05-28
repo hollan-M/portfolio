@@ -20,21 +20,49 @@ function randomInt(min: number, max: number) {
 
 let should_mute = false;
 
-let confirmationBox = document.getElementById("confirm");
+// document elements
+
+let confirmationBox = document.getElementById("confirm")!;
 let confirmElement = document.getElementById("CHECKMARK")!;
 let denyElement = document.getElementById("XMARK")!;
+let welcomeTextElement = document.getElementById("welcomeText")!;
+let headerElement = document.getElementById("header")!;
+let mainElement = document.getElementById("main")!;
+
+//
+setTimeout(() => {
+  confirmationBox.style.animation = "confirmStart 1.75s cubic-bezier(0.37, 0, 0.63, 1) forwards"
+}, 500);
+
 
 confirmElement.addEventListener("click", () => {
   should_mute = true;
-  console.log("aaahhh!!");
+
+  confirmationBox.style.animation = "confirmationEnd 1.5s cubic-bezier(0.7, 0, 0.84, 0) forwards";
+
+  startUp();
 })
 
 denyElement.addEventListener("click", () => {
   Valley_Of_Fools.play();
   Valley_Of_Fools.fade(0.1, 0.5, 3500);
 
-  confirmationBox.style.animation = "confirmationEnd 1.5s cubic-bezier(0.7, 0, 0.84, 0) forwards"
+  confirmationBox.style.animation = "confirmationEnd 1.5s cubic-bezier(0.7, 0, 0.84, 0) forwards";
+
+  startUp();
 })
+
+function startUp() {
+  setTimeout(() => {
+    welcomeTextElement.style.animation = "welcomeText 0.75s cubic-bezier(0.45, 0, 0.55, 1) forwards";
+    setTimeout(() => {
+      headerElement.style.animation = "header 0.75s cubic-bezier(0.45, 0, 0.55, 1) forwards";
+      setTimeout(() => {
+        mainElement.style.animation = "main 0.75s cubic-bezier(0.45, 0, 0.55, 1) forwards";
+      }, 1000);
+    }, 1000);
+  }, 1500);
+}
 
 // loops
 

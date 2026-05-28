@@ -7,7 +7,8 @@ body {
 
 #confirm {
     position: absolute;
-    top: 50%;
+    top: 0%; /*50%*/
+    opacity: 0;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 45%;
@@ -97,7 +98,8 @@ body {
     justify-content: space-evenly;
     column-gap: 15%;
     left: 3vw;
-    top: 13vh;
+    top: -15%; /*13vh*/
+    opacity: 0;
     width: 48vw;
     overflow-x: scroll;
     scrollbar-color: beige transparent;
@@ -112,7 +114,8 @@ body {
 
 #welcomeText {
     position: absolute;
-    top: 20.5%;
+    top: -15%; /*20.5%*/
+    opacity: 0;
     left: 77vw;
     color: beige;
     font-size: 2.8vw;
@@ -120,6 +123,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     border: 1px solid beige;
+    padding: 15px;
 }
 
 #header>div:hover {
@@ -168,7 +172,8 @@ body {
 
 #main {
     border: 1px solid #ffe665;
-    bottom: 16px;
+    bottom: -100%; /*1%*/
+    opacity: 0;
     position: absolute;
     width: 98vw;
     height: 74vh;
@@ -188,6 +193,50 @@ body {
         transform: translate(-50%, -50%);
         opacity: 0;
         pointer-events: none;
+    }
+}
+
+@keyframes welcomeText {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+    100% {
+        top: 20.5%;
+        opacity: 1;
+    }
+}
+
+@keyframes header {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+    100% {
+        top: 13vh;
+        opacity: 1;
+    }
+}
+
+@keyframes main {
+    0% {
+        bottom: -100%;
+        opacity: 0;
+    }
+    100% {
+        bottom: 1%;
+        opacity: 1;
+    }
+}
+
+@keyframes confirmStart {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+    100% {
+        top: 50%;
+        opacity: 1;
     }
 }
 
