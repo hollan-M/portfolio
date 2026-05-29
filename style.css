@@ -23,6 +23,7 @@ body {
     color: #ecdd8d;
     user-select: none;
     font-size: 25px;
+    padding: 2vw;
 }
 
 #disclaimer_line {
@@ -179,6 +180,57 @@ body {
     height: 74vh;
 }
 
+#landingMain {
+    bottom: 0%; /*1%*/
+    position: absolute;
+    width: 98vw;
+    height: 74vh;
+    color: beige;
+
+    opacity: 0;
+    padding-left: 25px;
+}
+#statementMain {
+    bottom: 0%; /*1%*/
+    position: absolute;
+    width: 98vw;
+    height: 74vh;
+    color: beige;
+
+    opacity: 0;
+    padding-left: 25px;
+}
+#galleriesMain {
+    bottom: 0%; /*1%*/
+    position: absolute;
+    width: 98vw;
+    height: 74vh;
+    color: beige;
+
+    opacity: 0;
+    padding-left: 25px;
+}
+#linksMain {
+    bottom: 0%; /*1%*/
+    position: absolute;
+    width: 98vw;
+    height: 74vh;
+    color: beige;
+
+    opacity: 0;
+    padding-left: 25px;
+}
+#extraMain {
+    bottom: 0%; /*1%*/
+    position: absolute;
+    width: 98vw;
+    height: 74vh;
+    color: beige;
+    
+    opacity: 0;
+    padding-left: 25px;
+}
+
 /* keyframes */
 @keyframes confirmationEnd {
     0% {
@@ -237,6 +289,15 @@ body {
     100% {
         top: 50%;
         opacity: 1;
+    }
+}
+
+@keyframes Click {
+    0% {
+        border-color: beige;
+    }
+    100% {
+        border-color: rgb(245, 245, 149);
     }
 }
 

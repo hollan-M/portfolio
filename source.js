@@ -49,7 +49,111 @@ function startUp() {
             }, 1000);
         }, 1000);
     }, 1500);
+} // THIS IS LACED  !!!!!!!!
+// header click & corresponding info display
+// ty jac for helping with this 
+const headerElements = {
+    landing: document.getElementById("landing"),
+    statement: document.getElementById("statement"),
+    galleries: document.getElementById("galleries"),
+    links: document.getElementById("links"),
+    extra: document.getElementById("extra")
+};
+const buttons = {
+    landing: {
+        enter: () => {
+            headerElements.landing.style.animation = "Click 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards";
+            document.getElementById("landingMain").style.opacity = "1";
+        },
+        leave: () => {
+            headerElements.landing.style.animation = "unset";
+            document.getElementById("landingMain").style.opacity = "0";
+        }
+    },
+    statement: {
+        enter: () => {
+            headerElements.statement.style.animation = "Click 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards";
+            document.getElementById("statementMain").style.opacity = "1";
+        },
+        leave: () => {
+            headerElements.statement.style.animation = "unset";
+            document.getElementById("statementMain").style.opacity = "0";
+        }
+    },
+    galleries: {
+        enter: () => {
+            headerElements.galleries.style.animation = "Click 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards";
+            document.getElementById("galleriesMain").style.opacity = "1";
+        },
+        leave: () => {
+            headerElements.galleries.style.animation = "unset";
+            document.getElementById("galleriesMain").style.opacity = "0";
+        }
+    },
+    links: {
+        enter: () => {
+            headerElements.links.style.animation = "Click 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards";
+            document.getElementById("linksMain").style.opacity = "1";
+        },
+        leave: () => {
+            headerElements.links.style.animation = "unset";
+            document.getElementById("linksMain").style.opacity = "0";
+        }
+    },
+    extra: {
+        enter: () => {
+            headerElements.extra.style.animation = "Click 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards";
+            document.getElementById("extraMain").style.opacity = "1";
+        },
+        leave: () => {
+            headerElements.extra.style.animation = "unset";
+            document.getElementById("extraMain").style.opacity = "0";
+        }
+    }
+};
+let lastButton = null;
+function onClick(button) {
+    lastButton?.leave(); // Shorthand for if (lastButton) lastButton.leave();
+    button.enter();
+    lastButton = button;
 }
+for (const index in headerElements) {
+    const button = buttons[index];
+    const element = headerElements[index];
+    if (!button)
+        continue;
+    element.addEventListener("click", () => onClick(button));
+    // You can also access the HTML element through headerElements[index]
+}
+// my shit attempt:
+// const headerElements = {
+//   landing: document.getElementById("landing"),
+//   statement: document.getElementById("statement"),
+//   galleries: document.getElementById("galleries"),
+//   links: document.getElementById("links"),
+//   extra: document.getElementById("extra")
+// }
+// let lastClicked = null;
+// const clickArray = {
+//   landing: {
+//     enter: () => {
+//     },
+//     leave: () => {
+//     }
+//   },
+// }
+// for (const el of Object.values(headerElements) as HTMLDivElement[]) {
+//   el?.addEventListener("click", (element) => {
+//     // PROCESS: make sure you aren't clicking the exact same thing, handle leave of the lastClick element, handle Enter of the new element 
+//     const target = element.target;
+//     let leaving = lastClicked; // null by default
+//     if (!leaving) {
+//       console.log("entering the element");
+//     }
+//     // clickArray[target] -> function -> situational..howwww ugh
+//   })
+// }
+// :[
 // loops
 let driftContainer = document.getElementById("driftcontainer");
 function createDrifter() {
